@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S-Tech SIS</title>
+    <link rel="stylesheet" href="CSS/AdminPage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="Js/AdminPage.js"></script>
+    <script src="Js/StudentManagement.js" ;></script>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="top">
+        <div class="logo">
+          <img
+            id="stechlogo"
+            src="Images/S-TECH_removebg-preview.png"
+            alt="S-Tech Logo"
+          />
+          <h1 id="s-tech student portal">S-Tech Student Portal</h1>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <!-- What is this? Content connection to Database?-->
+      <ul>
+        <li>
+          <a href="#" class="nav-link" data-target="#dashboard-content">
+            <i class="bx bxs-grid-alt"></i>
+            <span class="nav-item">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#student-management">
+            <i class="bx bxs-graduation"></i>
+            <span class="nav-item">Student</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#faculty-management">
+            <i class="bx bxs-user"></i>
+            <span class="nav-item">Faculty</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#curriculum-management">
+            <i class="bx bxs-folder"></i>
+            <span class="nav-item">Curriculum</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#schedule-managemnet">
+            <i class="bx bxs-calendar"></i>
+            <span class="nav-item">Schedule</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="courses-management">
+            <i class="bx bxs-book"></i>
+            <span class="nav-item">Program</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#subjects-management">
+            <i class="bx bxs-book-content"></i>
+            <span class="nav-item">Course</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#logout">
+            <i class="bx bx-log-out"></i>
+            <span class="nav-item">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--Sidebar Functionalities-->
+
+    <!--DASHBOARD CONTENT-->
+    <div class="main-content">
+      <div id="dashboard-content">
+        <div class="header">
+          <h1>Dashboard</h1>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Total Students</h3>
+            <p><span id="student-count">Loading...</span></p>
+          </div>
+          <div class="card">
+            <h3>Total Faculty</h3>
+            <p><span id="faculty-count">Loading...</span></p>
+          </div>
+          <div class="card">
+            <h3>Total Programs</h3>
+            <p><span id="program-count">Loading...</span></p>
+          </div>
+          <div class="card">
+            <h3>Total Courses</h3>
+            <p><span id="course-count"></span>Loading...</p>
+          </div>
+        </div>
+      </div>
+
+      <!--STUDENT MANAGEMENT-->
+      <div id="student-management" style="display: none">
+        <div class="header">
+          <h1>Student List</h1>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button><i class="bx bx-search"></i></button>
+            <!--WHAT to do with the ICONS?-->
+          </div>
+          <button class="add-student-btn">Add Student</button>
+        </div>
+        <div class="table-container">
+          <table id="student-table">
+            <thead>
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Year Level</th>
+                <th>Section</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2023-00359-SP-0</td>
+                <td>Jilwin Greg C. Cabrera</td>
+                <td>BSIT</td>
+                <td>2</td>
+                <td>1</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Add Student Function-->
+        <div id="add-student-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <!--WHAT close ICON-->
+            <h2>Add Student</h2>
+            <form id="student-form">
+              <label for="student-id">Student ID:</label>
+              <input type="text" id="student id" name="student-id" required />
+              <!--WHAT DIFFERENCES: class, id, name-->
+              <label for="student-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="student-last-name"
+                name="student-last-name"
+                required
+              />
+              <label for="student-first-name">First Name:</label>
+              <input
+                type="text"
+                id="student-first-name"
+                name="student-first-name"
+                required
+              />
+              <label for="student-middle-name">Middle Initial</label>
+              <input
+                type="text"
+                id="student-middle-name"
+                name="student-middle-name"
+              />
+              <label for="student-emai">Email:</label>
+              <input
+                type="email"
+                id="student-email"
+                name="student-emai"
+                required
+              />
+              <label for="student-contact">Contact Number:</label>
+              <input
+                type="number"
+                id="student-contact"
+                name="student-contact"
+                placeholder="PH|+63"
+                required
+              />
+              <label for="student-password"
+                >Password:
+                <button type="button" id="student-generate-button">
+                  --Generate Password
+                </button>
+              </label>
+              <input
+                type="text"
+                id="student-password"
+                name="student-password"
+                required
+              />
+              <label for="student-program">Program:</label>
+              <input
+                type="text"
+                id="student-program"
+                name="student-program"
+                required
+              />
+              <!--COULD CHANGE to dowpdown-->
+              <label for="student-year">Year:</label>
+              <input
+                type="text"
+                id="student-year"
+                name="student-year"
+                required
+              />
+              <label for="student-section">Section:</label>
+              <input
+                type="text"
+                id="student-section"
+                name="student-section"
+                required
+              />
+              <label for="student-sex">Sex:</label>
+              <select name="student-sex" id="student-sex" required>
+                <option value="">Select an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="student-birthdate">Birthdate:</label>
+              <input
+                type="date"
+                id="student-birthdate"
+                name="student-birthdate"
+                required
+              />
+              <label for="student-address">Address:</label>
+              <textarea
+                name="student-address"
+                id="student-address"
+                rows="4"
+                required
+              >
+              </textarea>
+              <!--COMPONENT: Modal Buttons-->
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--COMPONENT: Update SI Button-->
+        <div id="update-student-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Update Student</h2>
+            <form id="update-student-form">
+              <label for="update-student-id">Student ID:</label>
+              <input
+                type="text"
+                id="update-student-id"
+                name="update-student-id"
+                readonly
+              />
+              <label for="update-student-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="update-student-last-name"
+                name="update-student-last-name"
+                required
+              />
+              <label for="update-student-first-name">First Name:</label>
+              <input
+                type="text"
+                id="update-student-first-name"
+                name="update-student-first-name"
+                required
+              />
+              <label for="update-student-middle-name">Middle Initial</label>
+              <input
+                type="text"
+                id="update-student-middle-name"
+                name="update-student-middle-name"
+              />
+              <label for="update-student-email">Email:</label>
+              <input
+                type="email"
+                id="update-student-email"
+                name="update-student-email"
+                required
+              />
+              <label for="update-student-contact">Contact Number:</label>
+              <input
+                type="number"
+                id="update-student-contact"
+                name="update-student-contact"
+                placeholder="PH|+63"
+                required
+              />
+              <label for="update-student-password"
+                >Password:
+                <button type="text" id="update-student-generate-button">
+                  --Generate Password--
+                </button>
+              </label>
+              <input
+                type="text"
+                id="update-student-password"
+                name="update-student-password"
+                required
+              />
+              <label for="update-student-program">Program:</label>
+              <input
+                type="text"
+                id="update-student-program"
+                class="update-student-program"
+                required
+              />
+              <label for="update-student-year">Year:</label>
+              <input
+                type="number"
+                id="update-student-year"
+                class="update-student-year"
+                required
+              />
+              <label for="update-student-section">Section:</label>
+              <input
+                type="number"
+                id="update-student-section"
+                class="update-student-section"
+                required
+              />
+              <label for="update-student-sex">Sex:</label>
+              <select
+                name="update-student-sex"
+                id="update-student-sex"
+                required
+              >
+                <option value="">Select Option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="update-student-birthdate">Birthdate:</label>
+              <input
+                type="date"
+                id="update-student-birthdate"
+                class="update-student-birthdate"
+                required
+              />
+              <label for="update-student-address">Address:</label>
+              <textarea
+                name="update-student-address"
+                id="update-student-address"
+                rows="4"
+                required
+              >
+              </textarea>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="faculty-management" style="display: none">
+        <div class="header">
+          <h1>Faculty List</h1>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button><i class="bx bx-search"></i></button>
+          </div>
+          <button class="add-faculty-btn">Add Faculty</button>
+        </div>
+        <div class="table-container">
+          <table id="faculty-table">
+            <thead>
+              <tr>
+                <th>Faculty ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Department</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Lucilla Mendoza</td>
+                <td>lucilaaaa@gmail.com</td>
+                <td>09987654321</td>
+                <td>BSIT</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="add-faculty-modal" class="modal">
+          <div class="modal-context">
+            <span class="close">&times;</span>
+            <h2>Add Faculty</h2>
+            <form id="faculty-form">
+              <label for="faculty-id">Faculty ID:</label>
+              <input type="text" id="faculty-id" name="faculty-id" required />
+              <label for="faculty-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="faculty-last-name"
+                name="faculty-last-name"
+                required
+              />
+              <label for="faculty-first-name">First Name:</label>
+              <input
+                type="text"
+                id="faculty-last-name"
+                name="faculty-last-name"
+                required
+              />
+              <label for="faculty-middle-name">Middle Initial:</label>
+              <input
+                type="text"
+                id="faculty-middle-name"
+                name="faculty-middle-name"
+                required
+              />
+              <label for="faculty-email">Email:</label>
+              <input
+                type="email"
+                id="faculty-emai"
+                name-="faculty-email"
+                required
+              />
+              <label for="faculty-password"
+                >Password:
+                <button type="button" id="faculty-generate-button">
+                  --Generate Button--
+                </button>
+              </label>
+              <input
+                type="text"
+                id="faculty-password"
+                name="faculty-password"
+                required
+              />
+              <label for="faculty-contact">Contact Number:</label>
+              <input
+                type="number"
+                id="faculty-contact"
+                name="faculty-contact"
+                placeholder="PH|+63"
+                required
+              />
+              <label for="faculty-department">Department:</label>
+              <input
+                type="text"
+                id="faculty-department"
+                name="faculty-department"
+                required
+              />
+              <label for="faculty-sex">Sex:</label>
+              <select name="faculty-sex" id="faculty-sex" required>
+                <option value="">Select an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="faculty-address">Address:</label>
+              <textarea
+                name="faculty-address"
+                id="faculty-address"
+                rows="4"
+                required
+              >
+              </textarea>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="button" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

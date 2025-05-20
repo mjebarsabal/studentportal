@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('S-TECH BG.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+#overlay {
+  position: relative;
+  width: 100%;
+  height: 300%;
+  background: #003459;
+  opacity: 0.60;
+  backdrop-filter: blur(5px);
+}
+
+#loginbox {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: 10vh auto;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+#icon {
+  display: flex;
+  justify-content: center;
+}
+
+#oval {
+  width: 100px;
+  height: 100px;
+  background: url('S-TECH_removebg-preview.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+#s-techstudentportal {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #003459;
+  margin: 20px 0;
+}
+
+.input-field {
+  width: 93%;
+  height: 50px;
+  margin-top: 20px;
+  padding: 0 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #003459;
+  box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);
+  color: #013459;
+}
+
+#login-button {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#login {
+  width: 100%;
+  height: 50px;
+  font-size: 1.2rem;
+  background: #00a8e8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 480px) {
+  #s-techstudentportal {
+    font-size: 1.2rem;
+  }
+
+  #oval {
+    width: 80px;
+    height: 80px;
+  }
+
+  .input-field {
+    font-size: 0.9rem;
+  }
+
+  #login {
+    font-size: 1rem;
+  }
+}

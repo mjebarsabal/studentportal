@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80px;
+    background-color: #003459;
+    padding: 0.4rem 0.8rem;
+    transition: width 0.5s ease;
+    overflow: hidden;
+  }
+
+  .sidebar.active {
+    width: 250px;
+  }
+
+  .sidebar #btn {
+    position: absolute;
+    color: white;
+    top: 10px;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+
+  .sidebar.active #btn {
+    left: 90%;
+  }
+
+  .sidebar .top .logo img {
+    height: 40px;
+    left: 10%;
+  }
+
+  .sidebar .top .logo h1{
+    color: white;
+    margin-left: 10px;
+    font-size: 1.2rem;
+  }
+
+  .sidebar .top .logo {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .sidebar.active .top .logo {
+    opacity: 1;
+  }
+
+  .sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+  }
+
+  .sidebar ul li a {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    position: relative;
+  }
+
+  .sidebar ul li a:hover {
+    background-color: #ffffff;
+    color: rgb(11, 10, 27);
+  }
+
+  .sidebar ul li a i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+  }
+
+  .sidebar .nav-item {
+    opacity: 0;
+  }
+
+  .sidebar.active .nav-item {
+    opacity: 1;
+  }
+
+  .main-content {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: calc(100% - 80px);
+    height: 100%;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    transition: left 0.5s ease, width 0.5s ease;
+    overflow-y: auto;
+  }
+
+  .main-content.shifted {
+    left: 250px;
+    width: calc(100% -250px);
+  }
+  
+  #dashboard-content {
+    display: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  #dashboard-content h1 { /*Did not turn blue tho*/
+    margin-right: 20px;
+    font-size: 2rem;
+    color: #003459;
+  }
+
+  .cards { /*Formation and Allignmets*/
+    display: flex;
+    justify-content: center; /*Center Horiziontaly*/
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex: 0 1 calc(50% - 20px);
+  }
+
+  .card {
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 0 1 calc(40% - 20px);
+  }
+
+  .card h3 { /*Total Progs & Courses*/
+    margin: 0;
+    margin-bottom: 10px;
+    color: #00223a;
+    text-align: center;
+  }
+
+  .card p { /*Not sure*/
+    text-align: center;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .search-bar {
+    display: felx;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px 10px;
+    background-color: #fff;
+  }
+
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    flex-grow: 1;
+  }
+
+  .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #00223a;
+  }
+
+  /*COULD TURN INTO COMPONENT: add-btn*/
+  .add-student-btn,
+  .add-faculty-btn,
+  .create-schedule-btn,
+  .add-program-btn,
+  .add-course.btn {
+    background-color: #003459;
+    color: #f5f5f5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /*COULD TURN INTO COMPONENT: add-btn:hover*/
+  .add-student-btn:hover,
+  .add-faculty-btn:hover,
+  .create-schedule-btn:hover,
+  .add-program-btn:hover,
+  .add-course.btn:hover {
+    background-color: #004372;
+  }
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+}
+
+table th {
+  background-color: #f0f0f0;
+}
+
+table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+#student-management 
+.student-update-btn,
+.student-delete-btn {
+  background-color: #007EA7;
+  color: #fff;
+  border: none;
+  padding: 5px 10 px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+  margin-right: 5px;
+}
+
+#student-management .student-update-btn:hover,
+#student-management .student-delete-btn:hover {
+  background-color: #00a8e0;
+}
+
+
+    
