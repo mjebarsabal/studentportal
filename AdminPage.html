@@ -428,8 +428,8 @@
               <label for="faculty-first-name">First Name:</label>
               <input
                 type="text"
-                id="faculty-last-name"
-                name="faculty-last-name"
+                id="faculty-first-name"
+                name="faculty-first-name"
                 required
               />
               <label for="faculty-middle-name">Middle Initial:</label>
@@ -442,7 +442,7 @@
               <label for="faculty-email">Email:</label>
               <input
                 type="email"
-                id="faculty-emai"
+                id="faculty-email"
                 name-="faculty-email"
                 required
               />
@@ -489,12 +489,209 @@
               </textarea>
               <div class="modal-buttons">
                 <button type="button" class="cancel-btn">Cancel</button>
-                <button type="button" class="save-btn">Save</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="update-faculty-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Update Faculty</h2>
+            <form id="update-faculty-form">
+              <label for="update-faculty-id">Faculty ID:</label>
+              <input
+                type="text"
+                id="update-faculty-id"
+                name="update-faculty-id"
+                readonly
+              />
+              <label for="update-faculty-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="update-faculty-last-name"
+                name="update-faculty-last-name"
+                required
+              />
+              <label for="update-faculty-first-name">First Name:</label>
+              <input
+                type="text"
+                id="update-faculty-first-name"
+                name="update-faculty-first-name"
+                required
+              />
+              <label for="update-faculty-middle-name">Middle Initial:</label>
+              <input
+                type="text"
+                id="update-faculty-middle-name"
+                name="update-faculty-middle-name"
+                required
+              />
+              <label for="update-faculty-email">Email:</label>
+              <input
+                type="email"
+                id="update-faculty-email"
+                name-="update-faculty-email"
+                required
+              />
+              <label for="update-faculty-password"
+                >Password:
+                <button type="button" id="update-faculty-generate-button">
+                  --Generate Button--
+                </button>
+              </label>
+              <input
+                type="text"
+                id="update-faculty-password"
+                name="update-faculty-password"
+                required
+              />
+              <label for="update-faculty-contact">Contact Number:</label>
+              <input
+                type="number"
+                id="update-faculty-contact"
+                name="update-faculty-contact"
+                placeholder="PH|+63"
+                required
+              />
+              <label for="update-faculty-department">Department:</label>
+              <input
+                type="text"
+                id="update-faculty-department"
+                name="update-faculty-department"
+                required
+              />
+              <label for="update-faculty-sex">Sex:</label>
+              <select
+                name="update-faculty-sex"
+                id="update-faculty-sex"
+                required
+              >
+                <option value="">Select an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="update-faculty-address">Address:</label>
+              <textarea
+                name="update-faculty-address"
+                id="update-faculty-address"
+                rows="4"
+                required
+              >
+              </textarea>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
               </div>
             </form>
           </div>
         </div>
       </div>
+
+      <!--CURRICULUM MANAGEMENT
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      -->
+
+      <!--SCHEDULE MANAGEMENT
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      -->
+
+      <!--PROGRAM MANAGEMENT
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      -->
+
+      <!--COURSE MANAGEMENT
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      -->
     </div>
   </body>
 </html>
