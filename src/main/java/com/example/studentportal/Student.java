@@ -1,10 +1,12 @@
 package com.example.studentportal;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 
 @Entity
 @Table(name = "students")
@@ -12,20 +14,46 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-  
+    @Column(name = "ID")
     private Long ID;
-    private String Student_ID;
-    private String Last_Name;
-    private String First_Name;
-    private String Middle_Initial;
+
+    @Column(name = "Student_ID")
+    private String StudentID;
+
+    @Column(name = "Last_Name")
+    private String LastName;
+
+    @Column(name = "First_Name")
+    private String FirstName;
+
+    @Column(name = "Middle_Initial")
+    private String MiddleInitial;
+
+    @Column(name = "Email")
     private String Email;
-    private String Contact_Number;
+
+    @Column(name = "Contact_Number")
+    private String ContactNumber;
+
+    @Column(name = "Password")
     private String Password;
+
+    @Column(name = "Program")
     private String Program;
+
+    @Column(name = "Year")
     private String Year;
+
+    @Column(name = "Section")
     private String Section;
+
+    @Column(name = "Sex")
     private String Sex;
+
+    @Column(name = "Birthday")
     private String Birthday;
+
+    @Column(name = "Address")
     private String Address;
 
     public Long getID() {
@@ -33,28 +61,28 @@ public class Student {
     }
     
     public String getStudent_ID() {
-        return Student_ID;
+        return StudentID;
     }
     public void setStudent_ID(String student_ID) {
-        Student_ID = student_ID;
+        StudentID = student_ID;
     }
-    public String getLast_Name() {
-        return Last_Name;
+    public String getLastName() {
+        return LastName;
     }
-    public void setLast_Name(String last_Name) {
-        Last_Name = last_Name;
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
-    public String getFirst_Name() {
-        return First_Name;
+    public String getFirstName() {
+        return FirstName;
     }
-    public void setFirst_Name(String first_Name) {
-        First_Name = first_Name;
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
     }
-    public String getMiddle_Name() {
-        return Middle_Initial;
+    public String getMiddleInitial() {
+        return MiddleInitial;
     }
-    public void setMiddle_Name(String middle_Name) {
-        Middle_Initial = middle_Name;
+    public void setMiddleInitial(String middleInitial) {
+        MiddleInitial = middleInitial;
     }
     public String getEmail() {
         return Email;
@@ -62,11 +90,11 @@ public class Student {
     public void setEmail(String email) {
         Email = email;
     }
-    public String getContact_Number() {
-        return Contact_Number;
+    public String getContactNumber() {
+        return ContactNumber;
     }
-    public void setContact_Number(String contact_Number) {
-        Contact_Number = contact_Number;
+    public void setContactNumber(String contactNumber) {
+        ContactNumber = contactNumber;
     }
     public String getPassword() {
         return Password;
