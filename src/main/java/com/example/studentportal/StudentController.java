@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+
 @Controller
 public class StudentController{
     @Autowired
@@ -26,21 +28,21 @@ public class StudentController{
         return studentRepository.findAll();
     }
 
-    // @GetMapping(path = "/student/count")
-    // public ResponseEntity<Long> getStudentCount() {
-    // long count = studentRepository.count();
-    // return ResponseEntity.ok(count);
-    // }
+    @GetMapping(path = "/student/count")
+    public ResponseEntity<Long> getStudentCount() {
+    long count = studentRepository.count();
+    return ResponseEntity.ok(count);
+    }
 
-    @GetMapping("/student/{studentID}")
-    public ResponseEntity<Student> getStudentById(@PathVariable String studentID) {
-    Optional<Student> student = studentRepository.findByStudentID(studentID);
-    if (student.isPresent()) {
-        return ResponseEntity.ok(student.get());
-    } else {
-        return ResponseEntity.notFound().build();
-    }
-    }
+    // @GetMapping("/student/{studentID}")
+    // public ResponseEntity<Student> getStudentById(@PathVariable String studentID) {
+    // Optional<Student> student = studentRepository.findByStudentID(studentID);
+    // if (student.isPresent()) {
+    //     return ResponseEntity.ok(student.get());
+    // } else {
+    //     return ResponseEntity.notFound().build();
+    // }
+    // }
 
 
     @PostMapping("/student/add")

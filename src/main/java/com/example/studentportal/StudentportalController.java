@@ -1,4 +1,4 @@
-package com.example.studentportal;
+// package com.example.studentportal;
 
 // import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.stereotype.Controller;
@@ -49,5 +49,4 @@ package com.example.studentportal;
 //         return "Student added successfully!";
 //     }
     
-
 // }

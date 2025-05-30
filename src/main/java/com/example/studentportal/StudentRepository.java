@@ -8,7 +8,7 @@ import com.example.studentportal.Student;
 
 public interface StudentRepository extends CrudRepository<Student, Long> {
 
-    Optional<Student> findByStudentID(String studentID);
+    // Optional<Student> findByStudentID(String studentID);
     
 }
  
