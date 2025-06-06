@@ -197,7 +197,7 @@
   .add-faculty-btn,
   .create-schedule-btn,
   .add-program-btn,
-  .add-course.btn {
+  .add-course-btn {
     background-color: #003459;
     color: #f5f5f5;
     border: none;
@@ -345,7 +345,78 @@ table tbody tr:hover {
   cursor: pointer;
   color: #888;
 }
-  
+
+#faculty-generate-button,
+#student-generate-button,
+#update-student-generate-button,
+#update-faculty-generate-button {
+  cursor: pointer;
+  background-color: #003459;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+}
+
+#faculty-generate-button :hover,
+#student-generate-button :hover,
+#update-student-generate-button :hover,
+#update-faculty-generate-button :hover {
+  background-color: #00223a;
+}
+
+/*------------------ CURRICULUM MANAGEMENT ---------------------*/
+#curriculum-management {
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+}
+
+#curriculum-management .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#curriculum-mangement .header h1 {
+  font-size: 2rem;
+  color: #003459;
+}
+
+#curriculum-management .add-curriculum-btn{
+  background-color: #003459;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#curriculum-management .add-curriculum-btn:hover {
+  background-color: #004372;
+}
+
+#curriculum-mangement #curriculum-table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#curriculum-management #curriculum-table th,
+#curriculum-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 50px;
+}
+
+#curriculum-management #curriculum-table th {
+  background-color: #f2f2f2;
+  color: black;
+  text-align: left;
+}
+
+#curriculum-management #curriculum-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
 
 
-    
