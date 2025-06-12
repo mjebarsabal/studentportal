@@ -2,32 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>S-TECH Student Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S-TECH STUDENT PORTAL Login</title>
     <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="loginpage">
-      <div id="overlay"></div>
-
-      <div id="loginbox">
-        <div id="icon">
-          <div id="oval"></div>
-        </div>
-        <div id="s-techstudentportal">S-TECH STUDENT PORTAL</div>
-
-        <div id="username-box">
-          <input type="text" placeholder="Username" class="input-field" />
-        </div>
-
-        <div id="password-box">
-          <input type="password" placeholder="Password" class="input-field" />
-        </div>
-
-        <div id="login-button">
-          <button id="login">Log in</button>
-        </div>
+    <div class="login-container">
+      <div class="logo-container">
+        <!-- 
+                IMPORTANT: Replace 'path/to/your/logo.png' with the actual path to your logo image.
+                Example: 'images/s-tech-logo.png' or a full URL if hosted online.
+                Ensure the logo is a small, square image for best results (e.g., 100x100px).
+            -->
+        <img src="Images/s-tech-logo.png" alt="S-TECH Logo" class="logo" />
       </div>
+
+      <h2 class="portal-title">S-TECH STUDENT PORTAL</h2>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email" class="sr-only">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password" class="sr-only">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button type="submit" class="login-button">Log in</button>
+        <p id="message" class="message-text"></p>
+      </form>
     </div>
+
+    <script src="Js/script.js"></script>
   </body>
 </html>

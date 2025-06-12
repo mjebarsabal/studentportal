@@ -1,4 +1,4 @@
-package com.example.studentportal;
+package com.example.studentportal.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

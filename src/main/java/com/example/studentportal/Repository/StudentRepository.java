@@ -1,14 +1,17 @@
-package com.example.studentportal;
+package com.example.studentportal.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
-import com.example.studentportal.Student;
+
+import com.example.studentportal.Entity.Student;
 
 public interface StudentRepository extends CrudRepository<Student, Long> {
 
     // Optional<Student> findByStudentID(String studentID);
     
+    List<Student> findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(String firstName, String lastName);
 }
  

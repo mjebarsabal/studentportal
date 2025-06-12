@@ -1,4 +1,4 @@
-package com.example.studentportal;
+package com.example.studentportal.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,128 +15,135 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     @Column(name = "ID")
-    private Long ID;
+    private Long id;
 
     @Column(name = "Student_ID")
-    private String StudentID;
+    private String studentID;
 
     @Column(name = "Last_Name")
-    private String LastName;
+    private String lastName;
 
     @Column(name = "First_Name")
-    private String FirstName;
+    private String firstName;
 
     @Column(name = "Middle_Initial")
-    private String MiddleInitial;
+    private String middleInitial;
 
     @Column(name = "Email")
-    private String Email;
+    private String email;
 
     @Column(name = "Contact_Number")
-    private String ContactNumber;
+    private String contactNumber;
 
     @Column(name = "Password")
-    private String Password;
+    private String password;
 
     @Column(name = "Program")
-    private String Program;
+    private String program;
 
     @Column(name = "Year")
-    private String Year;
+    private String year;
 
     @Column(name = "Section")
-    private String Section;
+    private String section;
 
     @Column(name = "Sex")
-    private String Sex;
+    private String sex;
 
     @Column(name = "Birthday")
-    private String Birthday;
+    private String birthday;
 
     @Column(name = "Address")
-    private String Address;
+    private String address;
 
-    public Long getID() {
-        return ID;
+    @Column(name = "Enabled")
+    private boolean enabled = true;
+
+    public Long getId() {
+        return id;
     }
-    
-    public String getStudent_ID() {
-        return StudentID;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public void setStudent_ID(String student_ID) {
-        StudentID = student_ID;
+    public String getStudentID() {
+        return studentID;
+    }
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
     }
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
     public String getMiddleInitial() {
-        return MiddleInitial;
+        return middleInitial;
     }
     public void setMiddleInitial(String middleInitial) {
-        MiddleInitial = middleInitial;
+        this.middleInitial = middleInitial;
     }
     public String getEmail() {
-        return Email;
+        return email;
     }
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
     public String getContactNumber() {
-        return ContactNumber;
+        return contactNumber;
     }
     public void setContactNumber(String contactNumber) {
-        ContactNumber = contactNumber;
+        this.contactNumber = contactNumber;
     }
     public String getPassword() {
-        return Password;
+        return password;
     }
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
     public String getProgram() {
-        return Program;
+        return program;
     }
     public void setProgram(String program) {
-         Program = program;
+        this.program = program;
     }
     public String getYear() {
-        return Year;
+        return year;
     }
     public void setYear(String year) {
-        Year = year;
+        this.year = year;
     }
     public String getSection() {
-        return Section;
+        return section;
     }
     public void setSection(String section) {
-        Section = section;
+        this.section = section;
     }
     public String getSex() {
-        return Sex;
+        return sex;
     }
     public void setSex(String sex) {
-        Sex = sex;
+        this.sex = sex;
     }
     public String getBirthday() {
-        return Birthday;
+        return birthday;
     }
     public void setBirthday(String birthday) {
-        Birthday = birthday;
+        this.birthday = birthday;
     }
     public String getAddress() {
-        return Address;
+        return address;
     }
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
+    public boolean isEnabled() { return enabled; }
+    public void setEnabled(boolean enabled) { this.enabled = enabled; }
 
 }

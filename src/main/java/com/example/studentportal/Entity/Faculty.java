@@ -1,4 +1,4 @@
-package com.example.studentportal;
+package com.example.studentportal.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,11 +15,12 @@ public class Faculty {
 
   
     private Long ID;
-    private String Name;
-    private String Email;
+    private String name;
+    private String email;
     private String Contact;
     private String Department;
     private String Password;
+    private boolean enabled = true;
     public Long getID() {
         return ID;
     }
@@ -31,16 +32,16 @@ public class Faculty {
         Faculty_ID = faculty_ID;
     }
     public String getName() {
-        return Name;
+        return name;
     }
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
     public String getEmail() {
-        return Email;
+        return email;
     }
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
     public String getContact() {
         return Contact;
@@ -60,5 +61,7 @@ public class Faculty {
     public void setPassword(String password) {
         Password = password;
     }
+    public boolean isEnabled() { return enabled; }
+    public void setEnabled(boolean enabled) { this.enabled = enabled; }
 
 }
