@@ -1,0 +1,542 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/Images/s-tech-bg.png);
+    background-position: 0px 5%;
+    background-size: cover;
+    position:relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 50px;
+
+}
+
+nav h1{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color:white;
+    position: absolute;
+    left: 11%;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 13px; 
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.text-box{
+    width:90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 50px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 16px;
+    color: white;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    border-radius: 5px;
+    right: 0;
+    z-index: 1;
+    width: 175px;
+}
+
+.profile-dropdown .dropdown-menu li {
+    display: block;
+    padding: 10px;
+}
+
+.profile-dropdown .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 13px;
+}
+
+.profile-dropdown .dropdown-menu li a:hover {
+    background-color: #f2f2f2;
+}
+
+#facultyload,
+#classlist,
+#grades,
+#profile{
+    display: none;
+}
+
+#facultyload {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 5% 20px;
+}
+
+#facultyload .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+  
+#facultyload h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin: 0;
+}
+  
+#facultyload .search-bar h3,
+#facultyload .search-bar h4 {
+    margin: 0 10px;
+    font-size: 15px;
+    color: #333;
+}
+  
+#facultyload .search-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+#facultyload .search-bar select {
+    margin: 0 10px;
+    margin-top: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 40px;
+    width: 357px;
+    margin-right: 20px;
+}
+
+#facultyload #view-schedule {
+    background-color:#1893F8;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    height: 40px;
+    width: 350px;
+    margin-top: 31px;
+}
+
+.add-schedule-btn {
+    background-color: #003459;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 1.5%;
+}
+
+.add-schedule-btn:hover {
+    background-color: #004372
+}
+
+#classlist #view-schedule:hover{
+    background-color: #60b3f7;
+}
+  
+#facultyload table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#facultyload table th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+}
+#facultyload table td{
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+#facultyload table th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+#classlist {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 5% 20px;
+}
+
+#classlist h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#classlist .search-bar h4,
+#classlist .search-bar h5 {
+    margin: 0 10px;
+    font-size: 15px;
+    color: #333;
+}
+
+#classlist .search-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+#classlist .search-bar select {
+    margin: 0 10px;
+    padding: 8px 16px;
+    margin-top: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 40px;
+    width: 357px;
+    margin-right: 20px;
+}
+
+#classlist #view-class-list {
+    background-color:#1893F8;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    height: 40px;
+    width: 350px;
+    margin-top: 31px;
+}
+
+#classlist #view-class-list:hover{
+    background-color: #60b3f7;
+}
+
+#classlist #download-class-list {
+    background-color:#1893F8;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
+
+#classlist #download-class-list:hover{
+    background-color: #60b3f7;
+}
+
+#classlist table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#classlist table th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+#classlist table td{
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+#grades {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 5% 20px;
+}
+
+#grades h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#grades .search-bar h4,
+#grades .search-bar h5 {
+    margin: 0 10px;
+    font-size: 15px;
+    color: #333;
+}
+
+#grades .search-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+#grades .search-bar select {
+    margin: 0 10px;
+    padding: 8px 16px;
+    margin-top: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 40px;
+    width: 357px;
+    margin-right: 20px;
+}
+
+#grades #view-fgrades {
+    background-color:#1893F8;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    height: 40px;
+    width: 350px;
+    margin-top: 31px;
+}
+
+#classlist #view-fgradess:hover{
+    background-color: #60b3f7;
+}
+
+#grades #view-grades {
+    background-color:#1893F8;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
+
+#grades #view-grades:hover{
+    background-color: #60b3f7;
+}
+
+#grades table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#grades table th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+#grades table td{
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+#profile {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 5% 20px;
+}
+
+#profile h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#profile .form-group {
+    margin-bottom: 15px;
+}
+
+#profile .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#profile .form-group input,
+#profile .form-group select,
+#profile .form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#profile .form-group select {
+    padding: 10px;
+    height: 40px;
+}
+
+#profile .form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#profile .form-group.checkbox-group{
+    display: flex;
+}
+
+#profile .form-group input[type="checkbox"] {
+    display: flex;
+    align-items: center;
+    width: 1%;
+    margin-left: 1px;
+}
+
+#profile .form-group p{
+    margin-left: 2%;
+    font-size: 14px;
+    color: #555;
+}
+
+#profile button[type="submit"] {
+    background-color: #1893F8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#profile button[type="submit"]:hover{
+    background-color: #71bdfc;
+}
+
+
+#change-password {
+    height: 60vh;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 35% 0;
+    padding: 20px;
+}
+
+#change-password h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#password-form .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+#password-form label {
+    display: block;
+    font-weight: bold;
+}
+
+#password-form input,
+#password-form select,
+#password-form textarea {
+    width: 95%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#password-form textarea {
+    resize: vertical;
+}
+
+#password-form button[type="submit"] {
+    background-color: #1893F8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#password-form button[type="submit"]:hover {
+    background-color: #1474c3;
+}

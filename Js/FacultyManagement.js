@@ -74,7 +74,7 @@ $(document).ready(function(){
         var password = $('#faculty-password').val();
         var contactNumber = $('#faculty-contact').val();
         var department = $('#faculty-department').val();
-        var sex = $('#faculty-gender').val();
+        var sex = $('#faculty-sex').val();
         var address = $('#faculty-address').val();
     
         console.log('Faculty ID:', facultyid);
@@ -160,7 +160,7 @@ $(document).ready(function(){
                 $('#update-faculty-password').val(faculty.password);
                 $('#update-faculty-contact').val(faculty.contact);
                 $('#update-faculty-department').val(faculty.department);
-                $('#update-faculty-gender').val(faculty.sex);
+                $('#update-faculty-sex').val(faculty.sex);
                 $('#update-faculty-address').val(faculty.address);
     
                 $('#update-faculty-modal').show();
@@ -186,7 +186,7 @@ $(document).ready(function(){
             var password = $('#update-faculty-password').val();
             var contactNumber = $('#update-faculty-contact').val();
             var department = $('#update-faculty-department').val();
-            var sex = $('#update-faculty-gender').val();
+            var sex = $('#update-faculty-sex').val();
             var address = $('#update-faculty-address').val();
     
             $.ajax({
@@ -283,4 +283,3 @@ function updateFacultyCount() {
         }
     });
 }
-

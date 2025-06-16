@@ -19,17 +19,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="Js/AdminPage.js"></script>
     <script src="Js/StudentManagement.js" ;></script>
+    <script src="Js/FacultyManagement.js" ;></script>
   </head>
 
   <body>
     <div class="sidebar">
       <div class="top">
         <div class="logo">
-          <img
-            id="stechlogo"
-            src="Images/S-TECH_removebg-preview.png"
-            alt="S-Tech Logo"
-          />
+          <img id="stechlogo" src="Images/s-tech-logo.png" alt="S-Tech Logo" />
           <h1 id="s-tech student portal">S-Tech Student Portal</h1>
         </div>
         <i class="bx bx-menu" id="btn"></i>
@@ -131,7 +128,7 @@
               <tr>
                 <th>Student ID</th>
                 <th>Name</th>
-                <th>Course</th>
+                <th>Program</th>
                 <th>Year Level</th>
                 <th>Section</th>
                 <th>Actions</th>
@@ -412,7 +409,7 @@
           </table>
         </div>
         <div id="add-faculty-modal" class="modal">
-          <div class="modal-context">
+          <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Add Faculty</h2>
             <form id="faculty-form">
@@ -649,7 +646,160 @@
       </div>
 
       <!--VIEW CONTENT-->
-      <div id="curriculum-content" style="display: none"></div>
+      <!-- Curriculum Content Page (NEW) -->
+      <!-- This div is a sibling to curriculum-management and is initially hidden -->
+      <div id="curriculum-content-page" class="content-area">
+        <div class="header">
+          <h1>Curriculum Content</h1>
+          <button class="add-content-btn">Add Content</button>
+        </div>
+        <div class="table-container">
+          <table id="content-table">
+            <thead>
+              <tr>
+                <th>Year Level</th>
+                <th>Semester</th>
+                <th>Course Code</th>
+                <th>Description</th>
+                <th>Lec</th>
+                <th>Lab</th>
+                <th>Unit</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3rd</td>
+                <td>First</td>
+                <td>INTF361</td>
+                <td>Advanced Computing Technique</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+                <td>
+                  <button class="btn btn-secondary btn-sm">Update</button>
+                  <button class="btn btn-secondary btn-sm">Delete</button>
+                </td>
+              </tr>
+              <!-- More course content rows can be added here -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Back to Curriculum Management Button -->
+        <div class="flex justify-start">
+          <button id="backToCurriculumBtn" class="btn btn-secondary">
+            Back to Curriculum Management
+          </button>
+        </div>
+
+        <!-- Add Content Modal -->
+        <div id="add-content-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Content</h2>
+            <form id="add-content-form-element">
+              <div class="mb-4">
+                <label for="year-level">Year Level:</label>
+                <select id="year-level" name="year-level" required>
+                  <option value="">Select Year Level</option>
+                  <option value="1st">1st</option>
+                  <option value="2nd">2nd</option>
+                  <option value="3rd">3rd</option>
+                  <option value="4th">4th</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester" required>
+                  <option value="">Select Semester</option>
+                  <option value="First">First</option>
+                  <option value="Second">Second</option>
+                  <option value="Summer">Summer</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="course-code">Course Code:</label>
+                <input
+                  type="text"
+                  id="course-code"
+                  name="course-code"
+                  required
+                  placeholder="e.g., INTF361"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="course-description"
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  >Course Description:</label
+                >
+                <textarea
+                  id="course-description"
+                  name="course-description"
+                  rows="2"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder="e.g., Advanced Computing Technique"
+                ></textarea>
+              </div>
+              <div class="mb-4 flex space-x-4">
+                <div class="w-1/2">
+                  <label
+                    for="lecture-hours"
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    >Lecture Hours:</label
+                  >
+                  <input
+                    type="number"
+                    id="lecture-hours"
+                    name="lecture-hours"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="e.g., 2"
+                  />
+                </div>
+                <div class="w-1/2">
+                  <label
+                    for="laboratory-hours"
+                    class="block text-gray-700 text-sm font-bold mb-2"
+                    >Laboratory Hours:</label
+                  >
+                  <input
+                    type="number"
+                    id="laboratory-hours"
+                    name="laboratory-hours"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="e.g., 2"
+                  />
+                </div>
+              </div>
+              <div class="mb-6">
+                <label
+                  for="unit"
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  >Unit:</label
+                >
+                <input
+                  type="number"
+                  id="unit"
+                  name="unit"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder="e.g., 3"
+                />
+              </div>
+              <div class="flex items-center justify-end space-x-2">
+                <button
+                  type="button"
+                  id="cancelAddContentBtn"
+                  class="btn btn-secondary"
+                >
+                  Cancel
+                </button>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <!--SCHEDULE MANAGEMENT
       

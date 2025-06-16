@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-Tech SIS</title>
+    <link rel="stylesheet" href="Css/StudentPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <img id = "stech_logo" src = "Images/s-tech-logo.png">
+            <h1 id = "stech_sis">S-Tech SIS</h1>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li>
+                        <a href="#" class="nav-link" data-target="#schedule">
+                            <span class="nav-item">SCHEDULE</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" data-target="#grades">
+                            <span class="nav-item">GRADES</span>
+                        </a>
+                    </li>
+                    <li class="profile-dropdown">
+                        <a href="#">
+                            <i class='bx bx-user'></i>
+                            <i class='bx bx-chevron-down'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="nav-link" data-target="#profile"><i class='bx bxs-user'></i> Profile</a></li>
+                            <li><a href="#" class="nav-link" data-target="#change-password"><i class='bx bxs-key'></i> Change Password</a></li>
+                            <li><a href="#" class="nav-link" data-target="#guidelines"><i class='bx bxs-notepad'></i>  Student's Guidelines</a></li>
+                            <li><a href="#"><i class='bx bx-log-out'></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    <div class="main-content">
+        <section id="schedule">
+            <div class="student-content">
+                <div class="header-container">
+                    <h1>School Year 2324- Second Semester</h1>
+                </div>
+                <div class="student-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>Lec</th>
+                                <th>Lab</th>
+                                <th>Unit</th>
+                                <th>Schedule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>COMP 009</td>
+                                <td>Object Oriented Programming</td>
+                                <td>2.0</td>
+                                <td>3.0</td>
+                                <td>3.0</td>
+                                <td>1-BSIT-SP 2-1-TH/TH 04:00PM-06:00PM/06:00PM-09:00PM<br>Faculty: LABAO, CHRISTIAN JAY</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>COMP 010</td>
+                                <td>Information Management</td>
+                                <td>2.0</td>
+                                <td>3.0</td>
+                                <td>3.0</td>
+                                <td>1-BSIT-SP 2-1-F/F 10:30AM-12:30PM/01:00PM-04:00PM<br>Faculty: Adorador, Charisse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>                   
+            </div>
+        </section>
+
+        <section id="grades">
+            <div class="student-content">
+                <h3>Grades</h3>
+                <div class="student-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Description</th>
+                                <th>Units</th>
+                                <th>Midterm Grade</th>
+                                <th>Final Grade</th>
+                                <th>Letter Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>COMP 009</td>
+                                <td>Object Oriented Programming</td>
+                                <td>3.0</td>
+                                <td>90</td>
+                                <td>95</td>
+                                <td>A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>                
+        </section>
+
+        <section id="profile">
+            <div class="student-content">
+                <h2>Profile</h2>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middle-name">Middle Name</label>
+                        <input type="text" id="middle-name" name="middle-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="suffix">Suffix</label>
+                        <input type="text" id="suffix" name="suffix">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="place-of-birth">Place of Birth</label>
+                        <input type="text" id="place-of-birth" name="place-of-birth" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile No.</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="residential-address">Residential Address</label>
+                        <textarea id="residential-address" name="residential-address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="permanent-address">Permanent Address</label>
+                        <textarea id="permanent-address" name="permanent-address" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="certify" name="certify" required>
+                        <p>I hereby certify that all the information provided are true and correct to the best of my knowledge.</p>
+                    </div>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </section>
+        
+        <section id="change-password">
+            <div class="faculty-content">
+                <h2>Change Password</h2>
+                <form id="password-form">
+                    <div class="form-group">
+                        <label for="last-name">Current Password:</label>
+                        <input type="text" id="current-pass" name="current-pass" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-pass">New Password:</label>
+                        <input type="text" id="new-pass" name="new-pass" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-pass">Confirm New Password:</label>
+                        <input type="text" id="confirm-pass" name="confirm-pass">
+                    </div>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="guidelines">
+            <div class="student-content">
+                <h2>GENERAL GUIDELINES FOR IMPLEMENTATION OF RA 10931 - UNIVERSAL ACCESS TO QUALITY TERTIARY EDUCATION IN PUP</h2>
+                <ol>
+                    <li>As stated in the Act, a student who has satisfied the admission requirements shall be eligible in availing Free Education provided that the student does not fall in the identified "ineligible" stated in Rule II Section 6 "Exceptions to Free HE".</li>
+                    <li>For a student to enjoy continued Free Education benefits, he/she must have good scholastic standing. However, the matrix below shows the action to be taken when students have scholastic delinquency:
+                        <h3>For 21 units and above load in previous semester</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Number of Subject Failed/ Withdrawn/ Dropped</th>
+                                    <th>Action to be Taken</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1 subject</td>
+                                    <td>Warning</td>
+                                    <td>Warning*</td>
+                                </tr>
+                                <tr>
+                                    <td>2 subjects</td>
+                                    <td>Warning with reduced load by 3 units</td>
+                                    <td>Warning*</td>
+                                </tr>
+                                <tr>
+                                    <td>3 subjects</td>
+                                    <td>Reduced load by 6 units</td>
+                                    <td>Scholarship will be forfeited for the following semester (Paying)</td>
+                                </tr>
+                                <tr>
+                                    <td>4 subjects</td>
+                                    <td>Dismissal-Dropped from the University</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>For 20 units and below load in previous semester</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Number of Subject Failed/ Withdrawn/ Dropped</th>
+                                    <th>Action to be Taken</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1-2 subjects</td>
+                                    <td>Warning</td>
+                                    <td>Warning*</td>
+                                </tr>
+                                <tr>
+                                    <td>3 subjects</td>
+                                    <td>Warning with reduced load by 3 units</td>
+                                    <td>Scholarship will be forfeited for the following semester (Paying)</td>
+                                </tr>
+                                <tr>
+                                    <td>4 subjects</td>
+                                    <td>Dismissal-Dropped from the University</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>*Note: Student who acquired a "Warning" for two consecutive semesters, the scholarship grant will be forfeited the following semester.</p>
+                    </li>
+                    <li>If a student stays beyond the allowed number of years covered by the FREE EDUCATION LAW, he/she shall pay the remaining allowable years of stay provided that this is still within the residency period.</li>
+                    <li>In case a student intends to file a leave of absence, the same procedure shall be followed as stated in the PUP Student Handbook. With permission from the University, the leave of absence will enable the student to still enjoy the scholarship on his/her return to the university.</li>
+                    <li>Existing admission, retention, and graduation rules and policy of the University shall be upheld. They shall be used as a basis to complement the implementation of the Act.</li>
+                    <li>For provisions inconsistent with the PUP Student Handbook, the proposed guidelines shall prevail.</li>
+                </ol>
+            </div>
+        </section>
+
+    
+    <div class ="text-box">
+        <h1>Welcome to the PUP-IMS Student Module!</h1>
+        <p> Hey there, students! Get ready to streamline your academic life with us. Access your courses, grades, and schedules all in one place.</p>
+    </div>
+    </section>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Initial state: hide all sections except the welcome message
+            $('.main-content > section').not(':first').hide();
+            
+            // Click handler for navigation links
+            $('.nav-link').click(function(e) {
+                e.preventDefault();
+                
+                // Hide welcome message if visible
+                $('.text-box').hide();
+                
+                // Hide all sections
+                $('.main-content > section').hide();
+                
+                // Show the target section corresponding to the clicked link
+                var target = $(this).data('target');
+                $(target).show();
+            });
+
+            // // Click handler for HOME link
+            // $('li:first-child a').click(function(e) {
+            //     e.preventDefault();
+                
+            //     // Show welcome message
+            //     $('.text-box').show();
+                
+            //     // Hide all sections
+            //     $('.main-content > section').hide();
+            // });
+
+            // Click handler for profile dropdown
+            $('.profile-dropdown > a').click(function(e) {
+                e.preventDefault();
+                
+                // Toggle dropdown menu visibility
+                $(this).siblings('.dropdown-menu').slideToggle('fast');
+            });
+        });
+
+    </script>
+    
+</body>
+</html>

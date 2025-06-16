@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-Tech SIS</title>
+    <link rel="stylesheet" href="Css/FacultyPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <img id = "stech_logo" src = "Images/s-tech-logo.png">
+            <h1 id = "stech_sis">S-Tech SIS</h1>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li>
+                        <a href="#" class="nav-link" data-target="#facultyload">
+                            <span class="nav-item">FACULTY LOAD</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" data-target="#classlist">
+                            <span class="nav-item">CLASS LIST</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" data-target="#grades">
+                            <span class="nav-item">GRADES</span>
+                        </a>
+                    </li>
+                    <li class="profile-dropdown">
+                        <a href="#">
+                            <i class='bx bx-user'></i>
+                            <i class='bx bx-chevron-down'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="nav-link" data-target="#profile"><i class='bx bxs-user'></i> Profile</a></li>
+                            <li><a href="#" class="nav-link" data-target="#change-password"><i class='bx bxs-key'></i> Change Password</a></li>
+                            <li><a href="#"><i class='bx bx-log-out'></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    <div class="main-content">
+        <section id="facultyload">
+            <div class="faculty-content">
+                <div class="header-container">
+                    <h2>Faculty Load</h2>
+                    <button class="add-schedule-btn">Add Availability</button>
+                </div>
+                <div class="search-bar">
+                    <div>
+                        <h3>School Year</h3>
+                        <select id="school-year">
+                            <option value="">Select an option</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h4>Semester</h4>
+                        <select id="semester">
+                            <option value="">Select an option</option>
+                            <option value="First-Semester">First</option>
+                            <option value="Second-Semester">Second</option>
+                            <option value="Summer">Summer</option>
+                        </select>
+                    </div>
+                    <button id="view-schedule">View</button>
+                </div>
+                <div class="faculty-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Section Code</th>
+                                <th>Subject Code</th>
+                                <th>Description</th>
+                                <th>Schedule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>BSIT 2-1</td>
+                                <td>COMP 009</td>
+                                <td>Object Oriented Programming</td>
+                                <td>TH/TH 04:00PM-06:00PM/06:00PM-09:00PM Room 103 New Building</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>BSIT 2-1</td>
+                                <td>COMP 010</td>
+                                <td>Information Management</td>
+                                <td>F/F 10:30AM-12:30PM/01:00PM-04:00PM</td>
+                            </tr>                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="classlist">
+            <div class="facultycontent">
+                <h3>Class List</h3>
+                <div class="search-bar">
+                    <div>
+                        <h4>School Year</h4>
+                        <select id="school-year">
+                            <option value="">Select an option</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h5>Semester</h5>
+                        <select id="semester">
+                            <option value="">Select an option</option>
+                            <option value="First-Semester">First</option>
+                            <option value="Second-Semester">Second</option>
+                            <option value="Summer">Summer</option>
+                        </select>
+                    </div>
+                    <button id="view-class-list">View</button>
+                </div>
+                <div class="faculty-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Section</th>
+                                <th>Subject Code</th>
+                                <th>Subject Description</th>
+                                <th>Schedule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>BSIT 2-1</td>
+                                <td>COMP 009</td>
+                                <td>Object Oriented Programming</td>
+                                <td>TH/TH 04:00PM-06:00PM/06:00PM-09:00PM</td>
+                                <td><button id="download-class-list">Download</button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>BSIT 2-1</td>
+                                <td>COMP 010</td>
+                                <td>Information Management</td>
+                                <td>F/F 10:30AM-12:30PM/01:00PM-04:00PM</td>
+                                <td><button id="download-class-list">Download</button></td>
+                            </tr>                        
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="grades">
+            <div class="facultycontent">
+                <h3>Grading Sheet</h3>
+                <div class="search-bar">
+                    <div>
+                        <h4>School Year</h4>
+                        <select id="school-year">
+                            <option value="">Select an option</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h5>Semester</h5>
+                        <select id="semester">
+                            <option value="">Select an option</option>
+                            <option value="First-Semester">First</option>
+                            <option value="Second-Semester">Second</option>
+                            <option value="Summer">Summer</option>
+                        </select>
+                    </div>
+                    <button id="view-fgrades">View</button>
+                </div>
+                <div class="faculty-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Subject Code</th>
+                                <th>Description</th>
+                                <th>Section Code</th>
+                                <th>Schedule</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>COMP 010</td>
+                                <td>Information Management</td>
+                                <td>BSIT 2-1</td>
+                                <td>F/F 10:30AM-12:30PM/01:00PM-04:00PM</td>
+                                <td><button id="view-grades">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>                
+        </section>
+
+        <section id="profile">
+            <div class="faculty-content">
+                <h2>Profile</h2>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middle-name">Middle Name</label>
+                        <input type="text" id="middle-name" name="middle-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="suffix">Suffix</label>
+                        <input type="text" id="suffix" name="suffix">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="option">Select an option</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="place-of-birth">Place of Birth</label>
+                        <input type="text" id="place-of-birth" name="place-of-birth" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile No.</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="residential-address">Residential Address</label>
+                        <textarea id="residential-address" name="residential-address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="permanent-address">Permanent Address</label>
+                        <textarea id="permanent-address" name="permanent-address" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="certify" name="certify" required>
+                        <p>I hereby certify that all the information provided are true and correct to the best of my knowledge.</p>
+                    </div>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </section>
+        
+        <section id="change-password">
+            <div class="faculty-content">
+                <h2>Change Password</h2>
+                <form id="password-form">
+                    <div class="form-group">
+                        <label for="last-name">Current Password:</label>
+                        <input type="text" id="current-pass" name="current-pass" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-pass">New Password:</label>
+                        <input type="text" id="new-pass" name="new-pass" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-pass">Confirm New Password:</label>
+                        <input type="text" id="confirm-pass" name="confirm-pass">
+                    </div>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </section>
+
+    
+    <div class ="text-box">
+        <h1>Welcome to the PUP-IMS Faculty Module!</h1>
+        <p> Hey there, teachers!
+            
+            Your tools for effective teaching are right here. Manage your faculty load, access class lists, and input grades effortlessly.
+        </p>
+    </div>
+    </section>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Initial state: hide all sections except the welcome message
+            $('.main-content > section').not(':first').hide();
+            
+            // Click handler for navigation links
+            $('.nav-link').click(function(e) {
+                e.preventDefault();
+                
+                // Hide welcome message if visible
+                $('.text-box').hide();
+                
+                // Hide all sections
+                $('.main-content > section').hide();
+                
+                // Show the target section corresponding to the clicked link
+                var target = $(this).data('target');
+                $(target).show();
+            });
+
+            // // Click handler for HOME link
+            // $('li:first-child a').click(function(e) {
+            //     e.preventDefault();
+                
+            //     // Show welcome message
+            //     $('.text-box').show();
+                
+            //     // Hide all sections
+            //     $('.main-content > section').hide();
+            // });
+
+            // Click handler for profile dropdown
+            $('.profile-dropdown > a').click(function(e) {
+                e.preventDefault();
+                
+                // Toggle dropdown menu visibility
+                $(this).siblings('.dropdown-menu').slideToggle('fast');
+            });
+        });
+
+
+    </script>
+    
+</body>
+</html>
