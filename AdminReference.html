@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIS</title>
+    <link rel="stylesheet" href="AdminPage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="AdminPage.js"></script>
+    <script src="StudentManagement.js"></script>
+    <script src="FacultyManagement.js"></script>
+    <script src="CurriculumManagement.js"></script>
+    <script src="ScheduleManagement.js"></script>
+    <script src="CourseManagement.js"></script>
+    <script src="SubjectManagement.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="top">
+        <div class="logo">
+          <img id="puplogo" src="Images/PUPLogo.png" alt="PUP Logo" />
+          <h1 id="pup-ims">PUP-IMS</h1>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul>
+        <li>
+          <a href="#" class="nav-link" data-target="#dashboard-content">
+            <i class="bx bxs-grid-alt"></i>
+            <span class="nav-item">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#student-management">
+            <i class="bx bxs-graduation"></i>
+            <span class="nav-item">Student</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#faculty-management">
+            <i class="bx bxs-user"></i>
+            <span class="nav-item">Faculty</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#curriculum-management">
+            <i class="bx bxs-folder"></i>
+            <span class="nav-item">Curriculum</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#schedule-management">
+            <i class="bx bxs-calendar"></i>
+            <span class="nav-item">Schedule</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#courses-management">
+            <i class="bx bxs-book"></i>
+            <span class="nav-item">Course</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#subjects-management">
+            <i class="bx bxs-book-content"></i>
+            <span class="nav-item">Subject</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-target="#logout">
+            <i class="bx bx-log-out"></i>
+            <span class="nav-item">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div id="dashboard-content">
+        <div class="header">
+          <h1>Dashboard</h1>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>Total Students</h3>
+            <p><span id="student-count">Loading...</span></p>
+          </div>
+          <div class="card">
+            <h3>Total Faculty</h3>
+            <p><span id="faculty-count">Loading...</span></p>
+          </div>
+          <div class="card">
+            <h3>Total Courses</h3>
+            <p><span id="course-count">Loading...</span></p>
+          </div>
+          <div class="card">
+            <h3>Total Subjects</h3>
+            <p><span id="subject-count">Loading...</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="student-management" style="display: none">
+        <div class="header">
+          <h1>Student List</h1>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button><i class="bx bx-search"></i></button>
+          </div>
+          <button class="add-student-btn">Add Student</button>
+        </div>
+        <div class="table-container">
+          <table id="student-table">
+            <thead>
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Year Level</th>
+                <th>Section</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2022-00067-SP-0</td>
+                <td>KC Pascual</td>
+                <td>BS Information Technology</td>
+                <td>2</td>
+                <td>1</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2022-00044-SP-0</td>
+                <td>Ronaldo</td>
+                <td>BS Information Technology</td>
+                <td>2</td>
+                <td>1</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="add-student-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Student</h2>
+            <form id="student-form">
+              <label for="student-id">Student ID:</label>
+              <input type="text" id="student-id" name="student-id" required />
+              <label for="student-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="student-last-name"
+                name="student-last-name"
+                required
+              />
+              <label for="student-first-name">First Name:</label>
+              <input
+                type="text"
+                id="student-first-name"
+                name="student-first-name"
+                required
+              />
+              <label for="student-middle-name">Middle Initial:</label>
+              <input
+                type="text"
+                id="student-middle-name"
+                name="student-middle-name"
+              />
+              <label for="student-email">Email:</label>
+              <input
+                type="email"
+                id="student-email"
+                name="student-email"
+                required
+              />
+              <label for="student-contact">Contact #:</label>
+              <input
+                type="number"
+                id="student-contact"
+                name="student-contact"
+                placeholder="🇵🇭|+63"
+                required
+              />
+              <label for="student-password"
+                >Password:
+                <button type="button" id="student-generate-button">
+                  --Generate Password--
+                </button></label
+              >
+              <input
+                type="text"
+                id="student-password"
+                name="student-password"
+                required
+              />
+              <label for="student-course">Course:</label>
+              <input
+                type="text"
+                id="student-course"
+                name="student-course"
+                required
+              />
+              <label for="student-year">Year:</label>
+              <input
+                type="number"
+                id="student-year"
+                name="student-year"
+                required
+              />
+              <label for="student-section">Section:</label>
+              <input
+                type="number"
+                id="student-section"
+                name="student-section"
+                required
+              />
+              <label for="student-gender">Sex:</label>
+              <select id="student-gender" name="student-gender" required>
+                <option value="">Select an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="student-birthdate">Birthdate:</label>
+              <input
+                type="date"
+                id="student-birthdate"
+                name="student-birthdate"
+                required
+              />
+              <label for="student-address">Address:</label>
+              <textarea
+                id="student-address"
+                name="student-address"
+                rows="4"
+                required
+              ></textarea>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="update-student-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Update Student</h2>
+            <form id="update-student-form">
+              <label for="update-student-id">Student ID:</label>
+              <input
+                type="text"
+                id="update-student-id"
+                name="update-student-id"
+                readonly
+              />
+              <label for="update-student-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="update-student-last-name"
+                name="update-student-last-name"
+                required
+              />
+              <label for="update-student-first-name">First Name:</label>
+              <input
+                type="text"
+                id="update-student-first-name"
+                name="update-student-first-name"
+                required
+              />
+              <label for="update-student-middle-name">Middle Initial:</label>
+              <input
+                type="text"
+                id="update-student-middle-name"
+                name="update-student-middle-name"
+              />
+              <label for="update-student-email">Email:</label>
+              <input
+                type="email"
+                id="update-student-email"
+                name="update-student-email"
+                required
+              />
+              <label for="update-student-contact">Contact #:</label>
+              <input
+                type="number"
+                id="update-student-contact"
+                name="update-student-contact"
+                placeholder="🇵🇭|+63"
+                required
+              />
+              <label for="update-student-password"
+                >Password:
+                <button type="button" id="update-student-generate-button">
+                  --Generate Password--
+                </button></label
+              >
+              <input
+                type="text"
+                id="update-student-password"
+                name="update-student-password"
+                required
+              />
+              <label for="update-student-course">Course:</label>
+              <input
+                type="text"
+                id="update-student-course"
+                name="update-student-course"
+                required
+              />
+              <label for="update-student-year">Year:</label>
+              <input
+                type="number"
+                id="update-student-year"
+                name="update-student-year"
+                required
+              />
+              <label for="update-student-section">Section:</label>
+              <input
+                type="number"
+                id="update-student-section"
+                name="update-student-section"
+                required
+              />
+              <label for="update-student-gender">Sex:</label>
+              <select
+                id="update-student-gender"
+                name="update-student-gender"
+                required
+              >
+                <option value="">Select an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="update-student-birthdate">Birthdate:</label>
+              <input
+                type="date"
+                id="update-student-birthdate"
+                name="update-student-birthdate"
+                required
+              />
+              <label for="update-student-address">Address:</label>
+              <textarea
+                id="update-student-address"
+                name="update-student-address"
+                rows="4"
+                required
+              ></textarea>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="faculty-management" style="display: none">
+        <div class="header">
+          <h1>Faculty List</h1>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button><i class="bx bx-search"></i></button>
+          </div>
+          <button class="add-faculty-btn">Add Faculty</button>
+        </div>
+        <div class="table-container">
+          <table id="faculty-table">
+            <thead>
+              <tr>
+                <th>Faculty ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Department</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Juan Dela Cruz</td>
+                <td>JuanDC@example.com</td>
+                <td>12345678910</td>
+                <td>BSIT</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="add-faculty-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Faculty</h2>
+            <form id="faculty-form">
+              <label for="faculty-id">Faculty ID:</label>
+              <input type="text" id="faculty-id" name="faculty-id" required />
+              <label for="faculty-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="faculty-last-name"
+                name="faculty-last-name"
+                required
+              />
+              <label for="faculty-first-name">First Name:</label>
+              <input
+                type="text"
+                id="faculty-first-name"
+                name="faculty-first-name"
+                required
+              />
+              <label for="faculty-middle-name">Middle Initial:</label>
+              <input
+                type="text"
+                id="faculty-middle-name"
+                name="faculty-middle-name"
+              />
+              <label for="faculty-email">Email:</label>
+              <input
+                type="email"
+                id="faculty-email"
+                name="faculty-email"
+                required
+              />
+              <label for="faculty-password"
+                >Password:
+                <button type="button" id="faculty-generate-button">
+                  --Generate Password--
+                </button></label
+              >
+              <input
+                type="text"
+                id="faculty-password"
+                name="faculty-password"
+                required
+              />
+              <label for="faculty-contact">Contact #:</label>
+              <input
+                type="number"
+                id="faculty-contact"
+                name="faculty-contact"
+                placeholder="🇵🇭|+63"
+                required
+              />
+              <label for="faculty-department">Department:</label>
+              <input
+                type="text"
+                id="faculty-department"
+                name="faculty-department"
+                required
+              />
+              <label for="faculty-gender">Sex:</label>
+              <select id="faculty-gender" name="faculty-gender" required>
+                <option value="">Select an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="faculty-address">Address:</label>
+              <textarea
+                id="faculty-address"
+                name="faculty-address"
+                rows="4"
+                required
+              ></textarea>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="update-faculty-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Update Faculty</h2>
+            <form id="update-faculty-form">
+              <label for="update-faculty-id">Faculty ID:</label>
+              <input
+                type="text"
+                id="update-faculty-id"
+                name="update-faculty-id"
+                readonly
+              />
+              <label for="update-faculty-last-name">Last Name:</label>
+              <input
+                type="text"
+                id="update-faculty-last-name"
+                name="update-faculty-last-name"
+                required
+              />
+              <label for="update-faculty-first-name">First Name:</label>
+              <input
+                type="text"
+                id="update-faculty-first-name"
+                name="update-faculty-first-name"
+                required
+              />
+              <label for="update-faculty-middle-name">Middle Initial:</label>
+              <input
+                type="text"
+                id="update-faculty-middle-name"
+                name="update-faculty-middle-name"
+              />
+              <label for="update-faculty-email">Email:</label>
+              <input
+                type="email"
+                id="update-faculty-email"
+                name="update-faculty-email"
+                required
+              />
+              <label for="update-faculty-password"
+                >Password:
+                <button type="button" id="update-faculty-generate-button">
+                  --Generate Password--
+                </button></label
+              >
+              <input
+                type="text"
+                id="update-faculty-password"
+                name="update-faculty-password"
+                required
+              />
+              <label for="update-faculty-contact">Contact #:</label>
+              <input
+                type="number"
+                id="update-faculty-contact"
+                name="update-faculty-contact"
+                placeholder="🇵🇭|+63"
+                required
+              />
+              <label for="update-faculty-department">Department:</label>
+              <input
+                type="text"
+                id="update-faculty-department"
+                name="update-faculty-department"
+                required
+              />
+              <label for="update-faculty-gender">Sex:</label>
+              <select
+                id="update-faculty-gender"
+                name="update-faculty-gender"
+                required
+              >
+                <option value="">Select an option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label for="update-faculty-address">Address:</label>
+              <textarea
+                id="update-faculty-address"
+                name="update-faculty-address"
+                rows="4"
+                required
+              ></textarea>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="curriculum-management" style="display: none">
+        <div class="header">
+          <h1>Curriculum</h1>
+          <button class="add-curriculum-btn">Add Curriculum</button>
+        </div>
+        <div class="table-container">
+          <table id="curriculum-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Course Code</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>BSIT</td>
+                <td>Bachelor of Science in Information Technology</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="table-container"
+          class="nav-link"
+          data-target="curriculum-management"
+          style="display: none"
+        >
+          <button class="back-curriculum-btn">Back</button>
+          <table id="curriculum-table">
+            <thead>
+              <tr>
+                <th>School Year</th>
+                <th>Semester</th>
+                <th>Level</th>
+                <th>Course Code</th>
+                <th>Subject Code</th>
+                <th>Description</th>
+                <th>Lec</th>
+                <th>Lab</th>
+                <th>Units</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    id="curriculum-sy"
+                    name="curriculum-sy"
+                    required
+                  />
+                </td>
+                <td>
+                  <select id="semester" name="semester" required>
+                    <option value="">Select an option</option>
+                    <option value="first">First</option>
+                    <option value="second">Second</option>
+                    <option value="summer">Summer</option>
+                  </select>
+                </td>
+                <td>
+                  <select id="Level" name="Level" required>
+                    <option value="">Select an option</option>
+                    <option value="Firstyear">1st</option>
+                    <option value="Secondyear">2nd</option>
+                    <option value="Thirdyear">3rd</option>
+                    <option value="Fourthyear">4th</option>
+                  </select>
+                </td>
+                <td>
+                  <select id="course-code" name="Course" required>
+                    <option value="">Select an option</option>
+                    <option value="BSIT">BSIT</option>
+                    <option value="BSA">BSA</option>
+                    <option value="BSBA-MM">BSBA-MM</option>
+                    <option value="BSBA-HRM">BSBA-HRM</option>
+                    <option value="BSE">BSE</option>
+                    <option value="BSED-EN">BSED-EN</option>
+                    <option value="BSED-MT">BSED-MT</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="curriculum-lec"
+                    name="curriculum-lec"
+                    style="width: 70px"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="curriculum-lab"
+                    name="curriculum-lab"
+                    style="width: 70px"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="curriculum-unit"
+                    name="curriculum-unit"
+                    style="width: 70px"
+                    required
+                  />
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>2024-2025</td>
+                <td>First</td>
+                <td>3rd</td>
+                <td>BSIT</td>
+                <td>INTE 361</td>
+                <td>Advanced Computing Techniques</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="schedule-management" style="display: none">
+        <div class="header">
+          <h1>Schedule Management</h1>
+          <button class="create-schedule-btn">Create New Schedule</button>
+        </div>
+      </div>
+
+      <div id="courses-management" style="display: none">
+        <div class="header">
+          <h1>Course List</h1>
+          <button class="add-course-btn">Add Course</button>
+        </div>
+        <div class="table-container">
+          <table id="courses-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Course Code</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>BSIT</td>
+                <td>Bachelor of Science in Information Technology</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="add-course-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Course</h2>
+            <form id="course-form">
+              <label for="course-code">Course Code:</label>
+              <input type="text" id="course-code" name="course-code" required />
+              <label for="course-description">Course Description:</label>
+              <input
+                type="text"
+                id="course-description"
+                name="course-description"
+                required
+              />
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="update-course-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Course</h2>
+            <form id="update-course-form">
+              <input type="hidden" id="update-course-id" />
+              <label for="update-course-code">Course Code:</label>
+              <input
+                type="text"
+                id="update-course-code"
+                name="update-course-code"
+                required
+              />
+              <label for="update-course-description">Course Description:</label>
+              <input
+                type="text"
+                id="update-course-description"
+                name="update-course-description"
+                required
+              />
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="subjects-management" style="display: none">
+        <div class="header">
+          <h1>Subject List</h1>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button><i class="bx bx-search"></i></button>
+          </div>
+          <button class="add-subject-btn">Add Subject</button>
+        </div>
+        <div class="table-container">
+          <table id="subjects-table">
+            <thead>
+              <tr>
+                <th>Subject ID</th>
+                <th>Description</th>
+                <th>Semester</th>
+                <th>Program</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>INTE 361</td>
+                <td>Advanced Computing Techniques</td>
+                <td>1st</td>
+                <td>BSIT</td>
+                <td>
+                  <button class="update-btn">Update</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="add-subject-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Subject</h2>
+            <form id="subject-form">
+              <label for="subject-code">Subject Code:</label>
+              <input
+                type="text"
+                id="subject-code"
+                name="subject-code"
+                required
+              />
+
+              <label for="subject-description">Subject Description:</label>
+              <input
+                type="text"
+                id="subject-description"
+                name="subject-description"
+                required
+              />
+
+              <label for="subject-semester">Semester:</label>
+              <select id="subject-semester" name="subject-semester" required>
+                <option value="">Select an option</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+              </select>
+
+              <label for="subject-program">Program:</label>
+              <input
+                type="text"
+                id="subject-program"
+                name="subject-program"
+                required
+              />
+
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="update-subject-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Update Subject</h2>
+            <form id="update-subject-form">
+              <input type="hidden" id="update-subject-id" />
+              <label for="update-subject-code">Subject Code:</label>
+              <input
+                type="text"
+                id="update-subject-code"
+                name="subject-code"
+                required
+              />
+
+              <label for="update-subject-description"
+                >Subject Description:</label
+              >
+              <input
+                type="text"
+                id="update-subject-description"
+                name="subject-description"
+                required
+              />
+
+              <label for="update-subject-semester">Semester:</label>
+              <select
+                id="update-subject-semester"
+                name="update-subject-semester"
+                required
+              >
+                <option value="">Select an option</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+              </select>
+
+              <label for="update-subject-program">Program:</label>
+              <input
+                type="text"
+                id="update-subject-program"
+                name="subject-program"
+                required
+              />
+
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
